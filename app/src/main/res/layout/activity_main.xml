@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="#faf8ef"
+    tools:context="edu.purdue.rtenany.cs180lab11retake.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:paddingTop="20dp">
+
+    <!--TODO: Change tools:context to your package name.MainActivity-->
+    <TextView
+        android:background="#EE82EE"
+        android:text="CS180's 2048"
+        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:id="@+id/titleBox"
+        android:layout_above="@+id/scoreBox"
+        android:layout_alignParentStart="true"
+        android:textSize="32sp"
+        android:fontFamily="casual" />
+
+    <TextView
+        android:background="#00CED1"
+        android:text="Score:\n0"
+        android:layout_height="60dp"
+        android:layout_width="100dp"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:paddingTop="2dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:id="@+id/scoreBox"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="casual" />
+
+    <GridView
+        android:layout_width="340dp"
+        android:background="#000000"
+        android:padding="10dp"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="4"
+        android:columnWidth="60dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:id="@+id/mainGrid"
+        android:layout_height="345dp"
+        android:layout_above="@+id/titleBox"
+        android:layout_alignParentStart="true"
+        tools:background="@android:color/holo_purple">
+    </GridView>
+
+    <TextView
+        android:background="#FFB6C1"
+        android:text="Undo"
+        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:textAlignment="center"
+        android:textSize="14dp"
+        android:paddingTop="3dp"
+        android:textColor="#ffffff"
+        android:id="@+id/undoBox"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/scoreBox"
+        android:onClick="undoAction"
+        android:fontFamily="casual" />
+
+    <TextView
+        android:background="@drawable/option_box"
+        android:text="Reset"
+        android:layout_height="30dp"
+        android:layout_width="100dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:paddingTop="3dp"
+        android:textColor="#ffffff"
+        android:id="@+id/resetBox"
+        android:layout_below="@+id/titleBox"
+        android:layout_toEndOf="@+id/scoreBox"
+        android:onClick="resetAction"
+        android:fontFamily="casual" />
+
+    <Button
+        android:text="UP"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/upButton"
+        android:layout_below="@+id/mainGrid"
+        android:layout_marginLeft="240dp"
+        android:textSize="8sp"
+        android:onClick="upAction"
+        android:soundEffectsEnabled="true"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+
+    <Button
+        android:text="DOWN"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/downButton"
+        android:layout_below="@+id/mainGrid"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="100dp"
+        android:textSize="8sp"
+        android:onClick="downAction"
+        android:soundEffectsEnabled="true"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="Left"
+        android:id="@+id/leftButton"
+        android:layout_below="@+id/mainGrid"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textSize="8sp"
+        android:onClick="leftAction"
+        android:soundEffectsEnabled="true"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="RIGHT"
+        android:id="@+id/rightButton"
+        android:layout_below="@+id/mainGrid"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textSize="8sp"
+        android:onClick="rightAction"
+        android:soundEffectsEnabled="true"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <TextView
+        android:background="#FFB6C1"
+        android:text="Redo"
+        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:textAlignment="center"
+        android:textSize="14dp"
+        android:paddingTop="3dp"
+        android:textColor="#ffffff"
+        android:id="@+id/redoBox"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignEnd="@id/titleBox"
+        android:onClick="redoAction"
+        android:fontFamily="casual" />
+
+    <TextView
+        android:text="Join the numbers and get the 2048 tile!"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="18dp"
+        android:paddingTop="0dp"
+        android:textColor="#766d65"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center" />
+</RelativeLayout>
